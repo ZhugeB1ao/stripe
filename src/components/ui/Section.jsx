@@ -2,6 +2,7 @@ const tones = {
   white: "bg-white text-ink",
   muted: "bg-surface text-ink",
   dark: "bg-ink text-white",
+  transparent: "bg-transparent text-ink",
 };
 
 export default function Section({
