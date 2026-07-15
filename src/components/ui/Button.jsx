@@ -2,7 +2,7 @@ const variants = {
   primary: "bg-brand text-white hover:bg-[#514dcf]",
   dark: "bg-ink text-white hover:bg-[#173b5c]",
   light: "bg-white text-ink hover:bg-surface",
-  cyan: "bg-cyan text-ink hover:bg-[#70e5ff]",
+  orange: "bg-orange text-ink hover:bg-[#f9c5a0]",
   outline: "border border-line bg-transparent text-ink hover:bg-surface",
 };
 

@@ -6,11 +6,11 @@ import Button from "../components/ui/Button.jsx";
 
 const links = [
   { name: "Solutions", href: "#product-overview" },
-  { name: "GlobalCommerce", href: "#global-commerce" },
+  { name: "Global Commerce", href: "#global-commerce" },
   { name: "Enterprise", href: "#enterprise" },
-  { name: "Startups", href: "#startups" },
-  { name: "DeveloperApis", href: "#developer-apis" },
-  { name: "LowCode", href: "#low-code" },
+  { name: "Developer Apis", href: "#developer-apis" },
+  { name: "Contact Sales >", href: "#" },
+    { name: "Sign in >", href: "#" },
 ];
 
 export default function Header() {
@@ -66,17 +66,29 @@ export default function Header() {
             <Button
               variant="outline"
               size="md"
-              className="border-none! px-4 py-2 text-sm font-medium text-white!"
+              className={`border-none! px-4 py-2 text-sm font-medium ${
+                isScrolled ? "text-ink!" : "text-white!"
+              }`}
             >
               Contact Sales {">"}
             </Button>
-            <Button
-              variant="light"
-              size="md"
-              className="px-4 py-2 text-sm font-medium text-[#E17537]!"
-            >
-              Sign in {">"}
-            </Button>
+            {isScrolled ? (
+              <Button
+                variant="orange"
+                size="md"
+                className="px-4 py-2 text-sm font-medium text-white!"
+              >
+                Sign in {">"}
+              </Button>
+            ) : (
+              <Button
+                variant="light"
+                size="md"
+                className="px-4 py-2 text-sm font-medium"
+              >
+                Sign in {">"}
+              </Button>
+            )}
           </div>
 
           <button
@@ -101,7 +113,7 @@ export default function Header() {
           <nav
             id="mobile-menu"
             aria-label="Mobile navigation"
-            className="mt-4 rounded-2xl bg-white/90! backdrop-blur-md p-5 lg:hidden"
+            className="mt-4 rounded-2xl bg-white/90! p-5 backdrop-blur-md lg:hidden"
           >
             <ul className="flex flex-col gap-1">
               {links.map((link) => (
