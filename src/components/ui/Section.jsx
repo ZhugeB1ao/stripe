@@ -13,7 +13,7 @@ export default function Section({
 }) {
   return (
     <section
-      className={`relative overflow-hidden py-20 lg:py-32 ${tones[tone]} ${className}`}
+      className={`relative overflow-hidden py-20 lg:py-32 ${tones[tone]} ${className} `}
       {...props}
     >
       {children}

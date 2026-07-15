@@ -11,6 +11,9 @@
   --color-cyan: #00d4ff;
 
   --shadow-media: 0 30px 60px -20px rgb(50 50 93 / 25%);
+
+  --breakpoint-3xl: 90.125rem;
+  --breakpoint-4xl: 120rem;
 }
 
 :root {
@@ -58,7 +61,8 @@
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 5rem;
+    font-weight: 500;
   }
   h2 {
     font-size: 2.25rem;
@@ -78,5 +82,10 @@
   button,
   a {
     font: inherit;
+  }
+
+  p{
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
 }

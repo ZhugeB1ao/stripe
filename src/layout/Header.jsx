@@ -3,12 +3,12 @@ import Section from "../components/ui/Section.jsx";
 import Button from "../components/ui/Button.jsx";
 
 const links = [
-  { name: "Solutions", href: "#" },
-  { name: "GlobalCommerce", href: "#" },
-  { name: "Enterprise", href: "#" },
-  { name: "Startups", href: "#" },
-  { name: "DeveloperApis", href: "#" },
-  { name: "LowCode", href: "#" },
+  { name: "Solutions", href: "#product-overview" },
+  { name: "GlobalCommerce", href: "#global-commerce" },
+  { name: "Enterprise", href: "#enterprise" },
+  { name: "Startups", href: "#startups" },
+  { name: "DeveloperApis", href: "#developer-apis" },
+  { name: "LowCode", href: "#low-code" },
 ];
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
       <Container className="flex items-center justify-between gap-4">
         <header className="flex w-full items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <h2 className="text-xl font-bold text-white!">My Application</h2>
+            <h2 className="text-xl font-bold text-white!">Stripe</h2>
 
             <ul className="flex items-center gap-4 ">
               {links.map((link) => (
@@ -44,7 +44,7 @@ export default function Header() {
             <Button
               variant="light"
               size="md"
-              className="px-4 py-2 text-sm font-medium text-transparent"
+              className="px-4 py-2 text-sm font-medium text-[#E17537]!"
             >
               Sign in {">"}
             </Button>
