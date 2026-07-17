@@ -4,6 +4,7 @@ import Header from "./layout/Header.jsx";
 import HeroSection from "./sections/Hero.jsx";
 import ProductOverview from "./sections/ProductOverview.jsx";
 import ProductSection from "./sections/ProductSection.jsx";
+import Enterprise from "./sections/Enterprise.jsx";
 import { productSections } from "./sections/productSectionsData.js";
 
 const sections = [
@@ -17,19 +18,19 @@ const sections = [
     ...section,
     Component: ProductSection,
   })),
-//   {
-//     id: "global-commerce",
-//     name: "GlobalCommerce",
-//     Component: PlaceholderSection,
-//   },
-//   { id: "enterprise", name: "Enterprise", Component: PlaceholderSection },
-//   { id: "startups", name: "Startups", Component: PlaceholderSection },
-//   {
-//     id: "developer-apis",
-//     name: "DeveloperApis",
-//     Component: PlaceholderSection,
-//   },
-//   { id: "low-code", name: "LowCode", Component: PlaceholderSection },
+  //   {
+  //     id: "global-commerce",
+  //     name: "GlobalCommerce",
+  //     Component: PlaceholderSection,
+  //   },
+  { id: "enterprise", name: "Enterprise", Component: Enterprise },
+  //   { id: "startups", name: "Startups", Component: PlaceholderSection },
+  //   {
+  //     id: "developer-apis",
+  //     name: "DeveloperApis",
+  //     Component: PlaceholderSection,
+  //   },
+  //   { id: "low-code", name: "LowCode", Component: PlaceholderSection },
 ];
 
 function PlaceholderSection({ id, name }) {
