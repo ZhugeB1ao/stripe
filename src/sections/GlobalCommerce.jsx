@@ -16,7 +16,7 @@ const commerceStats = [
         historical uptime for{" "}
         <a
           href="https://status.stripe.com/"
-          className="text-[#00d4ff] transition-colors hover:text-white"
+          className="text-sky-blue transition-colors hover:text-white"
         >
           Stripe services
         </a>
@@ -45,7 +45,7 @@ export default function GlobalCommerce({ id }) {
         src={globalCommerceBackground}
         alt=""
         aria-hidden="true"
-        className="absolute top-0 left-1/2 h-[1315px] w-full max-w-none min-w-[1920px] -translate-x-1/2"
+        className="absolute top-0 left-1/2 h-328.75 w-full max-w-none min-w-[1920px] -translate-x-1/2"
       />
 
       <Container className="relative z-10 max-w-(--page-width) pt-60 md:pt-50 lg:pt-61">
