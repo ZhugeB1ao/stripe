@@ -4,6 +4,7 @@ import Header from "./layout/Header.jsx";
 import HeroSection from "./sections/Hero.jsx";
 import ProductOverview from "./sections/ProductOverview.jsx";
 import ProductSection from "./sections/ProductSection.jsx";
+import Enterprise from "./sections/Enterprise.jsx";
 import GlobalCommerce from "./sections/GlobalCommerce.jsx";
 import { productSections } from "./sections/productSectionsData.js";
 
@@ -23,7 +24,7 @@ const sections = [
     name: "GlobalCommerce",
     Component: GlobalCommerce,
   },
-  //   { id: "enterprise", name: "Enterprise", Component: PlaceholderSection },
+  { id: "enterprise", name: "Enterprise", Component: Enterprise },
   //   { id: "startups", name: "Startups", Component: PlaceholderSection },
   //   {
   //     id: "developer-apis",
