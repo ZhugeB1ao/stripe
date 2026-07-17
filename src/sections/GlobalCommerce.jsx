@@ -45,12 +45,12 @@ export default function GlobalCommerce({ id }) {
         src={globalCommerceBackground}
         alt=""
         aria-hidden="true"
-        className="absolute top-0 h-[115%] w-full max-w-none min-w-322.5 object-cover object-top sm:h-full"
+        className="absolute top-0 left-1/2 h-[1315px] w-full max-w-none min-w-[1920px] -translate-x-1/2"
       />
 
-      <Container className="relative z-10 max-w-247.5 pt-60 md:pt-50 lg:pt-61">
+      <Container className="relative z-10 max-w-(--page-width) pt-60 md:pt-50 lg:pt-61">
         <div className="max-w-93">
-          <strong className="text-base font-semibold text-[#00d4ff]">
+          <strong className="text-base font-semibold text-sky-blue">
             Global scale
           </strong>
 
@@ -68,7 +68,7 @@ export default function GlobalCommerce({ id }) {
 
         <dl className="mt-15 grid gap-x-8 gap-y-8 sm:grid-cols-2 md:mt-23 lg:grid-cols-4">
           {commerceStats.map((stat) => (
-            <div key={stat.value} className="border-l-2 border-[#00d4ff] pl-3">
+            <div key={stat.value} className="border-l-2 border-sky-blue pl-3">
               <dt className="text-2xl leading-none font-medium text-white">
                 {stat.value}
               </dt>

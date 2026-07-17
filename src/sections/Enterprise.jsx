@@ -27,7 +27,7 @@ export default function Enterprise({ id }) {
       tone="muted"
       className="py-20! md:py-24!"
     >
-      <Container className="relative z-10 max-w-230">
+      <Container className="relative z-10 max-w-(--page-width)">
         <div className="max-w-150">
           <strong className="text-brand text-sm font-semibold">
             Enterprise reinvention

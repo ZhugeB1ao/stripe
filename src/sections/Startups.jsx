@@ -56,7 +56,7 @@ const startupColumns = [
 export default function Startups({ id }) {
   return (
     <Section id={id} tone="white" className="py-24! lg:py-32!">
-      <Container className="max-w-230">
+      <Container className="max-w-(--page-width)">
         <div className="max-w-150">
           <strong className="text-brand text-sm font-semibold">
             Built for growth
