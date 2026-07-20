@@ -73,7 +73,7 @@ export default function Header() {
             <Button
               variant="outline"
               size="md"
-              className={`border-none! px-4 py-2 text-sm font-medium ${
+              className={`border-none! px-4 py-2 text-sm font-medium hover:text-ink! ${
                 isScrolled ? "text-ink!" : "text-white!"
               }`}
             >
