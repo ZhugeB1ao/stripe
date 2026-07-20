@@ -1,6 +1,5 @@
 import Container from "../components/ui/Container.jsx";
 import Section from "../components/ui/Section.jsx";
-import globalCommerceBackground from "../assets/images/global-ecomerce-background.png";
 
 const commerceStats = [
   {
@@ -16,7 +15,7 @@ const commerceStats = [
         historical uptime for{" "}
         <a
           href="https://status.stripe.com/"
-          className="text-[#00d4ff] transition-colors hover:text-white"
+          className="text-sky-blue transition-colors hover:text-white"
         >
           Stripe services
         </a>
@@ -40,17 +39,20 @@ export default function GlobalCommerce({ id }) {
       id={id}
       tone="muted"
       className="4xl:h-210 h-270 py-0! md:h-200 lg:h-180"
+      style={{ "--slope-rise": "8.75vw" }}
     >
-      <img
-        src={globalCommerceBackground}
-        alt=""
+      <div
         aria-hidden="true"
-        className="absolute top-0 h-[115%] w-full max-w-none min-w-322.5 object-cover object-top sm:h-full"
+        className="absolute inset-0 bg-[#0A2540]"
+        style={{
+          clipPath:
+            "polygon(0 var(--slope-rise), 100% 0, 100% 100%, 0 100%)",
+        }}
       />
 
-      <Container className="relative z-10 max-w-247.5 pt-60 md:pt-50 lg:pt-61">
+      <Container className="relative z-10 max-w-(--page-width) pt-60 md:pt-50 lg:pt-61">
         <div className="max-w-93">
-          <strong className="text-base font-semibold text-[#00d4ff]">
+          <strong className="text-base font-semibold text-sky-blue">
             Global scale
           </strong>
 
@@ -68,7 +70,7 @@ export default function GlobalCommerce({ id }) {
 
         <dl className="mt-15 grid gap-x-8 gap-y-8 sm:grid-cols-2 md:mt-23 lg:grid-cols-4">
           {commerceStats.map((stat) => (
-            <div key={stat.value} className="border-l-2 border-[#00d4ff] pl-3">
+            <div key={stat.value} className="border-l-2 border-sky-blue pl-3">
               <dt className="text-2xl leading-none font-medium text-white">
                 {stat.value}
               </dt>

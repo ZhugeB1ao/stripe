@@ -1,11 +1,14 @@
-import Container from "./components/ui/Container.jsx";
-import Section from "./components/ui/Section.jsx";
 import Header from "./layout/Header.jsx";
 import HeroSection from "./sections/Hero.jsx";
 import ProductOverview from "./sections/ProductOverview.jsx";
 import ProductSection from "./sections/ProductSection.jsx";
 import Enterprise from "./sections/Enterprise.jsx";
 import GlobalCommerce from "./sections/GlobalCommerce.jsx";
+import Startups from "./sections/Startups.jsx";
+import DeveloperApis from "./sections/DeveloperApis.jsx";
+import LowCode from "./sections/LowCode.jsx";
+import GetStarted from "./sections/GetStarted.jsx";
+import Footer from "./layout/Footer.jsx";
 import { productSections } from "./sections/productSectionsData.js";
 
 const sections = [
@@ -25,37 +28,23 @@ const sections = [
     Component: GlobalCommerce,
   },
   { id: "enterprise", name: "Enterprise", Component: Enterprise },
-  //   { id: "startups", name: "Startups", Component: PlaceholderSection },
-  //   {
-  //     id: "developer-apis",
-  //     name: "DeveloperApis",
-  //     Component: PlaceholderSection,
-  //   },
-  //   { id: "low-code", name: "LowCode", Component: PlaceholderSection },
+  { id: "startups", name: "Startups", Component: Startups },
+  { id: "developer-apis", name: "DeveloperApis", Component: DeveloperApis },
+  { id: "low-code", name: "LowCode", Component: LowCode },
 ];
-
-function PlaceholderSection({ id, name }) {
-  return (
-    <Section id={id} tone="muted">
-      <Container>
-        <h2>{name}</h2>
-      </Container>
-    </Section>
-  );
-}
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-white">
       <Header />
 
       <main>
-        {sections.map(
-          ({ id, name, Component = PlaceholderSection, ...props }) => (
-            <Component key={id} id={id} name={name} {...props} />
-          ),
-        )}
+        {sections.map(({ id, name, Component, ...props }) => (
+          <Component key={id} id={id} name={name} {...props} />
+        ))}
+        <GetStarted />
       </main>
+      <Footer />
     </div>
   );
 }

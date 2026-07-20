@@ -4,6 +4,7 @@ const variants = {
   light: "bg-white text-ink hover:bg-surface",
   orange: "bg-orange text-ink hover:bg-[#f9c5a0]",
   outline: "border border-line bg-transparent text-ink hover:bg-surface",
+  sky: "bg-sky-blue text-ink hover:bg-[#55ddef]",
 };
 
 const sizes = {
