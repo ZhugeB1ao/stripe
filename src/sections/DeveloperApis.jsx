@@ -6,7 +6,6 @@ import Button from "../components/ui/Button.jsx";
 import Container from "../components/ui/Container.jsx";
 import Section from "../components/ui/Section.jsx";
 import developerApisImage from "../assets/images/developer-apis-pic.png";
-import developerApisBackground from "../assets/images/developer-apis-background.png";
 
 const developerFeatures = [
   {
@@ -41,12 +40,19 @@ const developerFeatures = [
 
 export default function DeveloperApis({ id }) {
   return (
-    <Section id={id} tone="white" className="h-250 overflow-hidden py-0!">
-      <img
-        src={developerApisBackground}
-        alt=""
+    <Section
+      id={id}
+      tone="white"
+      className="h-450 overflow-hidden py-0! md:h-400 lg:h-250"
+      style={{ "--slope-rise": "8.75vw" }}
+    >
+      <div
         aria-hidden="true"
-        className="absolute top-0 left-1/2 h-250 w-full max-w-none min-w-360 -translate-x-1/2"
+        className="absolute inset-0 bg-[#0A2540]"
+        style={{
+          clipPath:
+            "polygon(0 var(--slope-rise), 100% 0, 100% calc(100% - var(--slope-rise)), 0 100%)",
+        }}
       />
 
       <Container className="relative z-10 h-full max-w-(--page-width) py-36 lg:py-44">

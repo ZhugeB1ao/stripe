@@ -3,14 +3,23 @@ import { Menu, X } from "lucide-react";
 import Container from "../components/ui/Container.jsx";
 import Section from "../components/ui/Section.jsx";
 import Button from "../components/ui/Button.jsx";
+import logoWhite from "../assets/logos/stripe-1.png";
+import logoDark from "../assets/logos/stripe-2.png";
 
 const links = [
   { name: "Solutions", href: "#product-overview" },
   { name: "Global Commerce", href: "#global-commerce" },
   { name: "Enterprise", href: "#enterprise" },
   { name: "Developer Apis", href: "#developer-apis" },
+];
+
+const mobileLinks = [
+  { name: "Solutions", href: "#product-overview" },
+  { name: "Global Commerce", href: "#global-commerce" },
+  { name: "Enterprise", href: "#enterprise" },
+  { name: "Developer Apis", href: "#developer-apis" },
   { name: "Contact Sales >", href: "#" },
-    { name: "Sign in >", href: "#" },
+  { name: "Sign in >", href: "#" },
 ];
 
 export default function Header() {
@@ -38,13 +47,11 @@ export default function Header() {
       <Container>
         <header className="flex w-full items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <h2
-              className={`text-xl font-bold ${
-                isScrolled ? "text-ink!" : "text-white!"
-              }`}
-            >
-              Stripe
-            </h2>
+            <img 
+              className="h-6 w-auto"
+              src={isScrolled ? logoDark : logoWhite}
+              alt="Stripe Logo"
+            />
 
             <ul className="hidden items-center gap-4 lg:flex">
               {links.map((link) => (
@@ -116,7 +123,7 @@ export default function Header() {
             className="mt-4 rounded-2xl bg-white/90! p-5 backdrop-blur-md lg:hidden"
           >
             <ul className="flex flex-col gap-1">
-              {links.map((link) => (
+              {mobileLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}

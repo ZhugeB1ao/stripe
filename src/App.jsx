@@ -7,6 +7,8 @@ import GlobalCommerce from "./sections/GlobalCommerce.jsx";
 import Startups from "./sections/Startups.jsx";
 import DeveloperApis from "./sections/DeveloperApis.jsx";
 import LowCode from "./sections/LowCode.jsx";
+import GetStarted from "./sections/GetStarted.jsx";
+import Footer from "./layout/Footer.jsx";
 import { productSections } from "./sections/productSectionsData.js";
 
 const sections = [
@@ -28,19 +30,21 @@ const sections = [
   { id: "enterprise", name: "Enterprise", Component: Enterprise },
   { id: "startups", name: "Startups", Component: Startups },
   { id: "developer-apis", name: "DeveloperApis", Component: DeveloperApis },
-  // { id: "low-code", name: "LowCode", Component: LowCode },
+  { id: "low-code", name: "LowCode", Component: LowCode },
 ];
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-white">
       <Header />
 
       <main>
         {sections.map(({ id, name, Component, ...props }) => (
           <Component key={id} id={id} name={name} {...props} />
         ))}
+        <GetStarted />
       </main>
+      <Footer />
     </div>
   );
 }

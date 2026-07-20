@@ -1,6 +1,5 @@
 import Container from "../components/ui/Container.jsx";
 import Section from "../components/ui/Section.jsx";
-import globalCommerceBackground from "../assets/images/global-ecomerce-background.png";
 
 const commerceStats = [
   {
@@ -40,12 +39,15 @@ export default function GlobalCommerce({ id }) {
       id={id}
       tone="muted"
       className="4xl:h-210 h-270 py-0! md:h-200 lg:h-180"
+      style={{ "--slope-rise": "8.75vw" }}
     >
-      <img
-        src={globalCommerceBackground}
-        alt=""
+      <div
         aria-hidden="true"
-        className="absolute top-0 left-1/2 h-328.75 w-full max-w-none min-w-[1920px] -translate-x-1/2"
+        className="absolute inset-0 bg-[#0A2540]"
+        style={{
+          clipPath:
+            "polygon(0 var(--slope-rise), 100% 0, 100% 100%, 0 100%)",
+        }}
       />
 
       <Container className="relative z-10 max-w-(--page-width) pt-60 md:pt-50 lg:pt-61">
