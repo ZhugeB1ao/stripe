@@ -3,6 +3,7 @@ import { BadgeDollarSign, BookOpenCheck } from "lucide-react";
 import Button from "../components/ui/Button.jsx";
 import Container from "../components/ui/Container.jsx";
 import Section from "../components/ui/Section.jsx";
+import { motion } from "framer-motion";
 import payLogo from "../assets/logos/pay.png";
 import intergrationLogo from "../assets/logos/intergration.png";
 
@@ -19,13 +20,19 @@ export default function GetStarted() {
         aria-hidden="true"
         className="bg-surface absolute inset-0"
         style={{
-          clipPath: "polygon(0 0, 100% 0, 100% calc(100% - var(--slope-rise)), 0 100%)",
+          clipPath:
+            "polygon(0 0, 100% 0, 100% calc(100% - var(--slope-rise)), 0 100%)",
         }}
       />
 
       <Container className="relative z-10 max-w-(--page-width)">
-        <div className="grid gap-12 lg:grid-cols-2 pb-15 md:pb-40">
-          <div>
+        <div className="grid gap-12 pb-15 md:pb-40 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+          >
             <h2 className="font-no text-xl">Ready to get started?</h2>
             <p className="mt-5 max-w-105 text-sm leading-relaxed font-normal">
               Explore
@@ -45,10 +52,21 @@ export default function GetStarted() {
                 Contact sales ›
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-10 sm:grid-cols-2">
-            <article>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="grid gap-10 sm:grid-cols-2"
+          >
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+            >
               <img src={payLogo} alt="Pay logo" className="size-24" />
               <h3 className="border-brand border-l-2 pl-3 text-sm font-normal">
                 Always know what you pay
@@ -62,9 +80,14 @@ export default function GetStarted() {
               >
                 Pricing details ›
               </a>
-            </article>
+            </motion.article>
 
-            <article>
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+            >
               <img
                 src={intergrationLogo}
                 alt="Integration logo"
@@ -82,29 +105,27 @@ export default function GetStarted() {
               >
                 API reference ›
               </a>
-            </article>
-          </div>
+            </motion.article>
+          </motion.div>
         </div>
       </Container>
 
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 z-10 origin-left skew-y-[-5deg] w-20 md:w-40 xl:w-80 4xl:w-140"
-      >
-        <div className="relative -mb-2 ml-[50%] w-[30%] z-10">
-          <div className="h-6 bg-sky-blue" />
+      <div className="4xl:w-140 pointer-events-none absolute bottom-0 left-0 z-10 w-20 origin-left skew-y-[-5deg] md:w-40 xl:w-80">
+        <div className="relative z-10 -mb-2 ml-[50%] w-[30%]">
+          <div className="bg-sky-blue h-6" />
           <div className="h-2 bg-[#0066e6]" />
         </div>
-        <div className="relative h-8 bg-brand z-4" />
+        <div className="bg-brand relative z-4 h-8" />
       </div>
 
       <div
-        className="absolute right-0 h-0 z-10 origin-right skew-y-[-5deg] w-20 md:w-40 xl:w-80 4xl:w-140"
+        className="4xl:w-140 absolute right-0 z-10 h-0 w-20 origin-right skew-y-[-5deg] md:w-40 xl:w-80"
         style={{ bottom: "var(--slope-rise)" }}
       >
-        <div className="absolute -mt-8 w-full h-8 bg-sky-blue z-10" />
-        <div className="absolute -mt-2 ml-[20%] w-[30%] z-20">
+        <div className="bg-sky-blue absolute z-10 -mt-8 h-8 w-full" />
+        <div className="absolute z-20 -mt-2 ml-[20%] w-[30%]">
           <div className="h-2 bg-[#0066e6]" />
-          <div className="h-6 bg-brand" />
+          <div className="bg-brand h-6" />
         </div>
       </div>
     </Section>

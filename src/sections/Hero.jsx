@@ -13,6 +13,7 @@ import urbnLogo from "../assets/logos/urbn.png";
 import whatsAppLogo from "../assets/logos/whatsapp.png";
 import bmwLogo from "../assets/logos/bmw.png";
 import marriottLogo from "../assets/logos/marriott.png";
+import { motion } from "framer-motion";
 
 const customerLogos = [
   { src: amazonLogo, alt: "Amazon" },
@@ -35,24 +36,31 @@ export default function HeroSection({ id }) {
           className="4xl:h-110 absolute top-0 left-0 h-83 w-[1920px] max-w-none md:h-88 xl:h-100"
         />
 
-        <div className="4xl:max-w-xl relative z-10 py-10 md:max-w-md">
-          <h1 className="4xl:text-7xl pt-15 text-4xl leading-[1.1] md:text-5xl lg:pt-0 lg:text-6xl">
-            Financial infrastructure for the internet
-          </h1>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="4xl:max-w-xl relative z-10 py-10 md:max-w-md">
+            <h1 className="4xl:text-7xl pt-15 text-4xl leading-[1.1] md:text-5xl lg:pt-0 lg:text-6xl">
+              Financial infrastructure for the internet
+            </h1>
 
-          <p className="text-ink my-6 text-lg">
-            Millions of companies of all sizes use Stripe online and in person
-            to accept payments, send payouts, automate financial processes, and
-            ultimately grow revenue.
-          </p>
+            <p className="text-ink my-6 text-lg">
+              Millions of companies of all sizes use Stripe online and in person
+              to accept payments, send payouts, automate financial processes,
+              and ultimately grow revenue.
+            </p>
 
-          <div className="flex gap-4">
-            <Button variant="dark">Start now {">"}</Button>
-            <Button variant="outline">Contact sales {">"}</Button>
+            <div className="flex gap-4">
+              <Button variant="dark">Start now {">"}</Button>
+              <Button variant="outline">Contact sales {">"}</Button>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="absolute top-17 -right-1000 h-175 w-250 origin-top-right scale-[0.90] md:-right-120 lg:-right-90 xl:-right-40 4xl:right-0">
+      
+        <div className="4xl:right-0 absolute top-17 -right-1000 h-175 w-250 origin-top-right scale-[0.90] md:-right-120 lg:-right-90 xl:-right-40">
           <img
             src={heroPhone}
             alt="Stripe Phone"
@@ -65,14 +73,20 @@ export default function HeroSection({ id }) {
           />
         </div>
 
-        <div
-          aria-label="Customers using Stripe"
-          className="mt-30 grid grid-cols-2 md:grid-cols-4 gap-8"
+
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
-          {customerLogos.map((logo) => (
-            <img key={logo.alt} src={logo.src} alt={logo.alt} />
-          ))}
-        </div>
+          <div
+          className="mt-30 grid grid-cols-2 gap-8 md:grid-cols-4"
+          >
+            {customerLogos.map((logo) => (
+              <img key={logo.alt} src={logo.src} alt={logo.alt} />
+            ))}
+          </div>
+        </motion.div>
       </Container>
     </Section>
   );

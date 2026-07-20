@@ -86,8 +86,8 @@ const supportLinks = [
 export default function Footer() {
   return (
     <footer className="bg-white py-20">
-      <Container className="max-w-230">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="max-w-(--page-width)">
+        <div className="grid gap-12 grid-cols-2 md:grid-cols-4">
           <div className="flex flex-col items-start">
             <img className="h-6 w-auto" src={logoDark} alt="Stripe Logo" />
             <button

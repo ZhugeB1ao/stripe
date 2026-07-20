@@ -1,4 +1,5 @@
 import { FileText } from "lucide-react";
+import { motion } from "framer-motion";
 
 import Button from "../components/ui/Button.jsx";
 import Container from "../components/ui/Container.jsx";
@@ -22,13 +23,15 @@ const customerLogos = [
 
 export default function Enterprise({ id }) {
   return (
-    <Section
-      id={id}
-      tone="muted"
-      className="py-20! md:py-24!"
-    >
+    <Section id={id} tone="muted" className="py-20! md:py-24!">
       <Container className="relative z-10 max-w-(--page-width)">
-        <div className="max-w-150">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-150"
+        >
           <strong className="text-brand text-sm font-semibold">
             Enterprise reinvention
           </strong>
@@ -55,27 +58,37 @@ export default function Enterprise({ id }) {
           <Button size="sm" className="mt-5">
             Contact sales <span aria-hidden="true">›</span>
           </Button>
-        </div>
+        </motion.div>
 
-        <div className="mt-10 grid items-start lg:grid-cols-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mt-10 grid items-start lg:grid-cols-4"
+        >
           <aside className="order-2 mt-8 grid gap-6 sm:grid-cols-2 lg:order-1 lg:mt-0 lg:flex lg:flex-col lg:pr-6">
             <div className="">
-              <strong className="text-ink text-xl font-medium border-brand border-l pl-3">5+</strong>
-              <p className="mt-3 text-xs leading-[1.65] font-medium pl-3">
+              <strong className="text-ink border-brand border-l pl-3 text-xl font-medium">
+                5+
+              </strong>
+              <p className="mt-3 pl-3 text-xs leading-[1.65] font-medium">
                 Amazon businesses on Stripe including Prime, Audible, and Amazon
                 Pay.
               </p>
             </div>
 
             <div className="">
-              <strong className="text-ink text-xl font-medium border-brand border-l pl-3 ">50+</strong>
-              <p className="mt-3 text-xs leading-[1.65] font-medium pl-3">
+              <strong className="text-ink border-brand border-l pl-3 text-xl font-medium">
+                50+
+              </strong>
+              <p className="mt-3 pl-3 text-xs leading-[1.65] font-medium">
                 Payment methods available on Stripe
               </p>
             </div>
 
             <div className="">
-              <strong className="text-ink text-xs font-semibold border-brand border-l pl-3">
+              <strong className="text-ink border-brand border-l pl-3 text-xs font-semibold">
                 Products used
               </strong>
               <ul className="mt-4 space-y-3 pl-3">
@@ -119,9 +132,13 @@ export default function Enterprise({ id }) {
               </h3>
             </div>
           </article>
-        </div>
+        </motion.div>
 
-        <ul
+        <motion.ul
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           aria-label="Enterprise customers"
           className="mt-8 grid grid-cols-2 lg:grid-cols-4"
         >
@@ -137,7 +154,7 @@ export default function Enterprise({ id }) {
               />
             </li>
           ))}
-        </ul>
+        </motion.ul>
       </Container>
     </Section>
   );

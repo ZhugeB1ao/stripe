@@ -6,6 +6,7 @@ import Button from "../components/ui/Button.jsx";
 import Container from "../components/ui/Container.jsx";
 import Section from "../components/ui/Section.jsx";
 import developerApisImage from "../assets/images/developer-apis-pic.png";
+import { motion } from "framer-motion";
 
 const developerFeatures = [
   {
@@ -57,8 +58,13 @@ export default function DeveloperApis({ id }) {
 
       <Container className="relative z-10 h-full max-w-(--page-width) py-36 lg:py-44">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <strong className="text-sm font-semibold text-sky-blue">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+          >
+            <strong className="text-sky-blue text-sm font-semibold">
               Designed for developers
             </strong>
             <h2 className="mt-7 text-3xl leading-[1.15] font-medium text-white md:text-4xl">
@@ -70,45 +76,53 @@ export default function DeveloperApis({ id }) {
               institutions that make up the global economic landscape so that
               your teams can build what you need on one platform.
             </p>
-            <Button
-              size="sm"
-              variant="sky"
-              className="mt-6"
-            >
+            <Button size="sm" variant="sky" className="mt-6">
               Read the docs <span aria-hidden="true">›</span>
             </Button>
-          </div>
+          </motion.div>
 
-          <img
+          <motion.img
             src={developerApisImage}
             alt="Stripe API code and command-line events"
             className="w-full"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
           />
         </div>
 
         <div className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {developerFeatures.map(({ icon, title, description, link }) => (
-            <article key={title}>
-              <img
-                src={icon}
-                alt=""
-                aria-hidden="true"
-                className="size-10 ml-3"
-              />
-              <h3 className="mt-4 text-sm font-semibold text-white pl-3 border-l-2 border-sky-blue">
-                {title}
-              </h3>
-              <p className="mt-3 text-xs leading-relaxed text-[#adbdcc] pl-3">
-                {description}
-              </p>
-              <a
-                href="#developer-apis"
-                className="mt-4 inline-block text-xs font-semibold text-sky-blue hover:text-white pl-3"
+          {developerFeatures.map(
+            ({ icon, title, description, link }, index) => (
+              <motion.article
+                key={title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.08 }}
               >
-                {link} ›
-              </a>
-            </article>
-          ))}
+                <img
+                  src={icon}
+                  alt=""
+                  aria-hidden="true"
+                  className="ml-3 size-10"
+                />
+                <h3 className="border-sky-blue mt-4 border-l-2 pl-3 text-sm font-semibold text-white">
+                  {title}
+                </h3>
+                <p className="mt-3 pl-3 text-xs leading-relaxed text-[#adbdcc]">
+                  {description}
+                </p>
+                <a
+                  href="#developer-apis"
+                  className="text-sky-blue mt-4 inline-block pl-3 text-xs font-semibold hover:text-white"
+                >
+                  {link} ›
+                </a>
+              </motion.article>
+            ),
+          )}
         </div>
       </Container>
     </Section>

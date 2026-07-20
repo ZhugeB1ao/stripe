@@ -1,5 +1,6 @@
 import Container from "../components/ui/Container.jsx";
 import Section from "../components/ui/Section.jsx";
+import { motion } from "framer-motion";
 import startupAtlas from "../assets/images/startups-pic-1.png";
 import startupCheckout from "../assets/images/startups-pic-2.png";
 import startupPaymentLinks from "../assets/images/startups-pic-3.png";
@@ -57,7 +58,13 @@ export default function Startups({ id }) {
   return (
     <Section id={id} tone="white" className="py-24! lg:py-32!">
       <Container className="max-w-(--page-width)">
-        <div className="max-w-150">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-150"
+        >
           <strong className="text-brand text-sm font-semibold">
             Built for growth
           </strong>
@@ -71,9 +78,15 @@ export default function Startups({ id }) {
             enough for easy implementation and powerful enough to scale as fast
             and as far as you need.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-25 grid gap-8 md:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mt-25 grid gap-8 md:grid-cols-2"
+        >
           {startupColumns.map((column, columnIndex) => (
             <div
               key={columnIndex}
@@ -84,7 +97,7 @@ export default function Startups({ id }) {
               ))}
             </div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </Section>
   );
